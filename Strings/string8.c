@@ -1,4 +1,4 @@
-//  concatenation using strcat()
+// concatenation without strcat()
 #include <stdio.h>
 #include <string.h>
 #define max_size 100
@@ -12,8 +12,18 @@ int main()
     printf("Enter Your sure name : ");
     gets(name2);
 
-    strcat(name1, name2);
-    // strcat(name1, "Alam");
+    int i = 0, j = 0, length = 0;
+
+    while (name1[i] != '\0')
+    {
+        i++;
+        length++;
+    }
+    while (name2[j] != '\0')
+    {
+        name1[length + j] = name2[j];
+        j++;
+    }
 
     printf("Your full Name : %s \n", name1);
     printf("Your sure Name : %s", name2);
